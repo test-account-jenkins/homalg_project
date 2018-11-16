@@ -453,6 +453,12 @@ ReducedSyzygiesGeneratorsOfRows :=
   function( M )
     local N;
     
+    if not ZeroRows( M ) = [ ] or not ZeroColumns( M ) = [ ] then
+        Display("\033[1;30;103mWarning: M has zero rows or columns, where M = ");
+        Display( M );
+        Display( "\033[0m" );
+    fi;
+
     N := HomalgVoidMatrix(
       "unknown_number_of_rows",
       NrRows( M ),
@@ -484,6 +490,12 @@ ReducedSyzygiesGeneratorsOfColumns :=
   function( M )
     local N;
     
+    if not ZeroRows( M ) = [ ] or not ZeroColumns( M ) = [ ] then
+        Display("\033[1;30;103mWarning: M has zero rows or columns, where M = ");
+        Display( M );
+        Display( "\033[0m" );
+    fi;
+
     N := HomalgVoidMatrix(
       NrColumns( M ),
       "unknown_number_of_columns",
